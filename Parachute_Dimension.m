@@ -123,3 +123,23 @@ plot(m*g,sqrt((8*m*g)/(pi*ro*Cd*D^2)),'o');
 title('Descent Rate as a Function of Weight');
 
 xlim([m_plot(1)*g, m_plot(end)*g]);
+
+%% Black Powder
+%F: Force to break shear pins
+%V: Volume of rocket
+%T: Ignition tempurature 
+%R: Gas constant (8.3145 J*mol^-1*K^-1)
+%M: Mass of black powder
+
+%fix units
+F = input('What is the maximum shear force of the shear pins? ');
+
+V = ((pi*D^2)/4)*3;
+
+T = input('What is the ignition tempurature of the black powder? ');
+
+R = 8.3145;
+
+M = ((F*V)/(A*R*T));
+
+fprintf('Mass of black powder (in kg?): %.2f ',M);
